@@ -26,8 +26,9 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0XFFEFEDE7),
         appBar: PreferredSize(
-            preferredSize: const Size(double.infinity, 100),
+            preferredSize: const Size(double.infinity, 70),
             child: (ResponsiveLayout.isTinyLimit(context) ||
                     ResponsiveLayout.isTinyHeightLimit(context))
                 ? Container()

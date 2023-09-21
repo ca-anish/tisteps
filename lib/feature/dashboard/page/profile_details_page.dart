@@ -41,9 +41,18 @@ class _ProfileDetailsPageState extends State<ProfileDetailsPage> {
                       padding: const EdgeInsets.only(top: 25),
                       child: Column(children: [
                         Image.network(state.userDetails.data.avatar),
-                        Text(state.userDetails.data.firstName)
+                        SizedBox(height: 10),
+                        Text(
+                            '${state.userDetails.data.firstName} ${state.userDetails.data.lastName}')
                       ]))),
-              SizedBox(height: 300)
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  children: [
+                    Text(state.userDetails.support.text),
+                  ],
+                ),
+              ),
             ]));
           } else {
             return Row(mainAxisAlignment: MainAxisAlignment.center, children: [

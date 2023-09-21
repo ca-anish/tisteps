@@ -19,7 +19,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       backgroundColor: Colors.transparent,
       body: Container(
           height: 70,
-          color: Colors.black26,
+          color: Color(0XFFEFEDE7),
           child: Row(children: [
             widget.backButton
                 ? Padding(
@@ -28,7 +28,10 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: Icon(Icons.arrow_back_ios,color: Colors.white,),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                      ),
                     ),
                   )
                 : GestureDetector(
@@ -38,7 +41,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     child: const Padding(
                         padding: EdgeInsets.only(left: 8.0, right: 8),
                         child:
-                            Icon(Icons.menu, color: Colors.white, size: 30))),
+                            Icon(Icons.menu, color: Colors.black, size: 30))),
             const Padding(
                 padding: EdgeInsets.only(left: 25.0),
                 child: SizedBox(
@@ -53,12 +56,12 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                       MaterialPageRoute(
                           builder: (context) => const ComingSoonWidget()));
                 },
-                child: const Icon(Icons.person, color: Colors.white, size: 30)),
+                child: const Icon(Icons.person, color: Colors.black, size: 30)),
             PopupMenuButton(
                 offset: Offset(0.0, appBarHeight),
                 color: Colors.white,
                 icon: const Icon(Icons.keyboard_arrow_down_sharp,
-                    color: Colors.white, size: 30),
+                    color: Colors.black, size: 30),
                 onSelected: (result) {
                   switch (result) {
                     case 0:
