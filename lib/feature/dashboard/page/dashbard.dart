@@ -31,9 +31,7 @@ class _DashBoardState extends State<DashBoard> {
             child: (ResponsiveLayout.isTinyLimit(context) ||
                     ResponsiveLayout.isTinyHeightLimit(context))
                 ? Container()
-                : const AppBarWidget(
-                    backButton: false,
-                  )),
+                : const AppBarWidget(backButton: false)),
         body: currentIndex == 0
             ? const ComingSoonWidget()
             : currentIndex == 1
