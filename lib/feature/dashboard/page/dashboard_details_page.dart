@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tisteps/feature/dashboard/bloc/user_bloc.dart';
 import 'package:tisteps/feature/dashboard/widget/dashboard_details_container.widget.dart';
 
 class DashBoardDetailsPage extends StatefulWidget {
@@ -10,37 +12,22 @@ class DashBoardDetailsPage extends StatefulWidget {
 }
 
 class _DashBoardDetailsPageState extends State<DashBoardDetailsPage> {
-  String? selectedSalesValue;
-  String? selectedGCMValue;
+  int countIncrement = 1;
 
-  final List<String> items = [
-    'Last 7 days',
-    'Last 14 days',
-    'Last 30 days',
-    'Last 60 days',
-    'Last 90 days',
-  ];
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
+  getData(){
+    context.read<UserBloc>().add(UserListEvent(page: 1));
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: DashboardDetailsContainer(
-            selectedSalesValue: selectedSalesValue,
-            salesOnChanged: onChangeTotalSales,
-            items: items,
-            selectedGCMValue: selectedGCMValue,
-            gcmOnChanged: onChangeGCM));
-  }
-
-  void onChangeTotalSales(String? value) {
-    setState(() {
-      selectedSalesValue = value;
-    });
-  }
-
-  void onChangeGCM(String? value) {
-    setState(() {
-      selectedGCMValue = value;
-    });
+        child: DashboardDetailsContainer());
   }
 }
