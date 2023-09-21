@@ -14,3 +14,14 @@ class UserListEvent extends UserEvent {
   @override
   List<Object> get props => [page];
 }
+
+class UserDetailsEvent extends UserEvent {
+  final int userId;
+
+  const UserDetailsEvent({
+    required this.userId,
+  });
+
+  @override
+  List<Object> get props => [userId];
+}

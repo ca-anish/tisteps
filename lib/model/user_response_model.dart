@@ -13,7 +13,8 @@ List<Map<String, dynamic>?> mapUserDetailsToJson(
   }
 }
 
-Map<String, dynamic> mapWalkInAddressToJson(UserSupportDetailsModel userSupportDetails) {
+Map<String, dynamic> mapWalkInAddressToJson(
+    UserSupportDetailsModel userSupportDetails) {
   return userSupportDetails.toJson();
 }
 
@@ -21,21 +22,26 @@ Map<String, dynamic> mapWalkInAddressToJson(UserSupportDetailsModel userSupportD
 class UserResponseModel {
   @JsonKey(defaultValue: 0)
   int page;
-  @JsonKey(defaultValue: 0,name: "per_page")
+  @JsonKey(defaultValue: 0, name: "per_page")
   int perPage;
   @JsonKey(defaultValue: 0)
   int total;
-  @JsonKey(defaultValue: 0,name: "total_pages")
+  @JsonKey(defaultValue: 0, name: "total_pages")
   int totalPages;
   @JsonKey(toJson: mapUserDetailsToJson)
   List<UserDetailsModel> data = [];
   @JsonKey(toJson: mapWalkInAddressToJson)
   UserSupportDetailsModel support;
 
-
-  UserResponseModel({required this.page,required this.perPage,required this.total,required this.totalPages,required this.data,required this.support});
+  UserResponseModel(
+      {required this.page,
+      required this.perPage,
+      required this.total,
+      required this.totalPages,
+      required this.data,
+      required this.support});
 
   factory UserResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$UserListModelFromJson(json);
-  Map<String, dynamic> toJson() => _$UserListModelToJson(this);
+      _$UserResponseModelFromJson(json);
+  Map<String, dynamic> toJson() => _$UserResponseModelToJson(this);
 }

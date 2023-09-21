@@ -6,7 +6,7 @@ part of 'user_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserResponseModel _$UserListModelFromJson(Map<String, dynamic> json) =>
+UserResponseModel _$UserResponseModelFromJson(Map<String, dynamic> json) =>
     UserResponseModel(
       page: json['page'] as int? ?? 0,
       perPage: json['per_page'] as int? ?? 0,
@@ -19,7 +19,7 @@ UserResponseModel _$UserListModelFromJson(Map<String, dynamic> json) =>
           json['support'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$UserListModelToJson(UserResponseModel instance) =>
+Map<String, dynamic> _$UserResponseModelToJson(UserResponseModel instance) =>
     <String, dynamic>{
       'page': instance.page,
       'per_page': instance.perPage,

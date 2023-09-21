@@ -28,6 +28,15 @@ class UserListLoaded extends UserState {
   List<Object> get props => [];
 }
 
+class UserDetailsLoaded extends UserState {
+  final GetUserDetailsModel userDetails;
+
+  const UserDetailsLoaded(this.userDetails);
+
+  @override
+  List<Object> get props => [];
+}
+
 class UserListError extends UserState {
   final String msg;
   final bool? status;

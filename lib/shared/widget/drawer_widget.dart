@@ -31,17 +31,18 @@ class _DrawerPageState extends State<DrawerPage> {
         elevation: 0,
         child: SingleChildScrollView(
             child: Padding(
-                padding:  EdgeInsets.only(top: Constants.kPadding * 1,bottom:Constants.kPadding ),
+                padding: EdgeInsets.only(
+                    top: Constants.kPadding * 1, bottom: Constants.kPadding),
                 child: Column(children: [
                   const SizedBox(height: 40),
                   ListTile(
-                    title: const Text("Admin Menu",
-                        style: TextStyle(color: Colors.black)),
-                    trailing:  IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: const Icon(Icons.close, color: Colors.black))),
+                      title: const Text("Admin Menu",
+                          style: TextStyle(color: Colors.black)),
+                      trailing: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: const Icon(Icons.close, color: Colors.black))),
                   const SizedBox(height: 20),
                   ...List.generate(
                       _buttonNames.length,
@@ -49,16 +50,23 @@ class _DrawerPageState extends State<DrawerPage> {
                             Container(
                                 decoration: index == _currentIndex
                                     ? BoxDecoration(
-                                  color: index ==_currentIndex ? Color(0xfffff8e6) : Colors.black)
+                                        color: index == _currentIndex
+                                            ? Colors.black26
+                                            : Colors.black)
                                     : null,
                                 child: ListTile(
                                     title: Text(_buttonNames[index].title,
-                                        style: TextStyle(color: index == _currentIndex ? Color(0xffe1ad01) : Colors.black)),
+                                        style: TextStyle(
+                                            color: index == _currentIndex
+                                                ? Colors.black
+                                                : Colors.black)),
                                     leading: Padding(
-                                        padding:
-                                            const EdgeInsets.all(Constants.kPadding),
+                                        padding: const EdgeInsets.all(
+                                            Constants.kPadding),
                                         child: Icon(_buttonNames[index].icon,
-                                            color: index == _currentIndex ? Color(0xffe1ad01) : Colors.black)),
+                                            color: index == _currentIndex
+                                                ? Colors.black
+                                                : Colors.black)),
                                     onTap: () {
                                       setState(() {
                                         print(index);
