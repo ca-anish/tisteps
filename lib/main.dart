@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:tisteps/feature/authandicate/page/login_page.dart';
 import 'package:tisteps/feature/dashboard/page/dashbard.dart';
 
 import 'feature/dashboard/bloc/user_bloc.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TISteps',
       theme: ThemeData(
+        fontFamily: 'SFPro',
         primarySwatch: Colors.blue),
-      home: DashBoard(),
+      home: LoginPage()
     );
   }
 }

@@ -42,4 +42,7 @@ flutter:
   assets:
     - assets/images/
   uses-material-design: true
-
+  fonts:
+    - family: SFPro
+      fonts:
+        - asset: assets/fonts/SFPro/SF-Pro.ttf
