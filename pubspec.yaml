@@ -1,4 +1,4 @@
-name: tisteps
+name: TI Steps
 description: A new Flutter project.
 publish_to: 'none'
 
@@ -36,6 +36,12 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
   build_runner: ^2.1.2
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_logo.png"
 
 
 flutter:
